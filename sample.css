@@ -6,3 +6,9 @@ html[lang=ja] .sample-hero h1{font-size:clamp(32px,4.3vw,62px);line-height:1.45}
 @media(max-width:760px){html[lang=ja] .sample-hero h1{font-size:clamp(29px,8.2vw,42px)}}
 .sample-phrase{display:inline-block;white-space:nowrap}
 .sample-menu h2 span[lang]>span{display:inline-block}
+/* Standalone links keep a 24px minimum target */
+.sample-banner a,.sample-footer a,.sample-project-cta a{display:inline-block;padding-block:6px}
+.sample-header nav a{padding:12px 6px}
+#back-to-top{position:fixed;bottom:max(24px,env(safe-area-inset-bottom));right:max(20px,env(safe-area-inset-right));z-index:90;width:44px;height:44px;border-radius:50%;background:#272b20;color:#f0eee4;border:1px solid #ffffff26;box-shadow:0 6px 20px #00000028;display:flex;align-items:center;justify-content:center;font-size:18px;padding:0;opacity:0;visibility:hidden;translate:0 12px;transition:opacity .25s,translate .25s,background .2s}
+#back-to-top.is-visible{opacity:1;visibility:visible;translate:0 0}
+#back-to-top:hover{background:#3a4030}

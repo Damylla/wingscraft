@@ -8,8 +8,14 @@
   document.querySelector('nav').setAttribute('aria-label',root.lang==='ja'?'ページ内メニュー':'Page navigation');
   document.querySelector('.menu-filters').setAttribute('aria-label',root.lang==='ja'?'メニューの絞り込み':'Filter the menu');
   document.getElementById('sample-language').setAttribute('aria-label',root.lang==='ja'?'Switch to English':'Switch to Japanese');
+  document.getElementById('back-to-top')?.setAttribute('aria-label',root.lang==='ja'?'ページトップへ戻る':'Back to top');
   const count=[...document.querySelectorAll('[data-category]')].filter(el=>!el.hidden).length;
   status.textContent=root.lang==='ja'?`${count}件のメニューを表示しています。`:`Showing ${count} menu items.`;
+ }
+ const topBtn=document.getElementById('back-to-top');
+ if(topBtn){
+  window.addEventListener('scroll',()=>topBtn.classList.toggle('is-visible',window.scrollY>400),{passive:true});
+  topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'}));
  }
  document.getElementById('sample-language').addEventListener('click',()=>{root.lang=root.lang==='ja'?'en':'ja';try{localStorage.setItem('wingscraft-language-choice',root.lang)}catch{}update()});
  document.querySelectorAll('[data-filter]').forEach(button=>button.addEventListener('click',()=>{

@@ -138,6 +138,7 @@
  function render(){
   document.title=kind==='inquiries'?t('問い合わせ管理デモ — Wingscraft','Inquiry desk demo — Wingscraft'):t('予約管理デモ — Wingscraft','Booking desk demo — Wingscraft');
   document.getElementById('demo-language').setAttribute('aria-label',t('Switch to English','Switch to Japanese'));
+  document.getElementById('back-to-top')?.setAttribute('aria-label',t('ページトップへ戻る','Back to top'));
   document.querySelector('nav').setAttribute('aria-label',t('デモ','Demos'));
   renderStats();if(kind==='inquiries')renderInquiries();else renderBookings();
   if(notice)feedback.textContent=pair(notice);renderUndo();
@@ -149,5 +150,10 @@
 document.getElementById('undo-booking').addEventListener('click',()=>{if(!undoBooking)return;const x=undoBooking;if(!available(x.date,x.start,services[x.service].duration,x.id)){say('この枠に別の予約があるため、元に戻せません。','This slot has another booking. Cancellation cannot be undone yet.');return;}Object.assign(bookings.find(b=>b.id===x.id),x);day=x.date;changedId=x.id;undoBooking=null;renderStats();renderBookings();say('予約を元に戻しました。','Booking restored.');document.getElementById('add-booking').focus({preventScroll:true});});
  detailDialog.addEventListener('close',()=>{if(kind!=='inquiries')return;captureInquiry();renderList();const row=content.querySelector(`[data-inquiry="${active}"]`);row?.focus({preventScroll:true});if(mobile.matches)window.scrollTo({top:listScroll,behavior:'instant'});});
  mobile.addEventListener('change',()=>{captureInquiry();syncDetail();});
+ const topBtn=document.getElementById('back-to-top');
+ if(topBtn){
+  window.addEventListener('scroll',()=>topBtn.classList.toggle('is-visible',window.scrollY>400),{passive:true});
+  topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'}));
+ }
  seed();render();
 })();
