@@ -4418,3 +4418,616 @@ html[lang=ja] .page-index .closing h2 {
     padding: 52px 22px;
   }
 }
+
+
+/* ==========================================================================
+   v16 — Interactive Studio Upgrade:
+   1. Symbolic Hero Blueprint Sculpture
+   2. Animated Service Icons
+   3. "From Idea to Launch" Connected Journey Timeline
+   4. Interactive Live Project Showcases
+   5. Selectable Project-Type Cards & Enhanced Inquiry Flow
+   ========================================================================== */
+
+/* --- 1. Symbolic Hero Blueprint Sculpture --- */
+.hero-stage-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+}
+
+.page-index .home-hero h1 {
+  font-size: clamp(42px, 5.4vw, 78px);
+  line-height: 1.05;
+  max-width: 14em;
+}
+html[lang=ja] .page-index .home-hero h1 {
+  font-size: clamp(34px, 4.5vw, 62px);
+  line-height: 1.22;
+}
+
+.hero-craft-sculpture {
+  position: relative;
+  perspective: 900px;
+  animation: arrive 0.95s 0.12s var(--ease-out) both;
+}
+
+.sculpture-card {
+  border-radius: 26px;
+  background:
+    radial-gradient(90% 90% at 80% 15%, #d9c7a51a 0%, transparent 65%),
+    linear-gradient(155deg, #1b1e18 0%, #121410 100%);
+  border: 1px solid #ffffff1c;
+  box-shadow: 0 28px 70px -24px #000000cc, inset 0 1px 0 #ffffff22;
+  padding: 18px 20px 16px;
+  overflow: hidden;
+  transition: border-color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+}
+.sculpture-card:hover {
+  border-color: #d9c7a54d;
+  box-shadow: 0 34px 80px -22px #000000e6, inset 0 1px 0 #ffffff2e;
+}
+
+.sculpture-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ffffff12;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.sculpture-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #b7c9a4;
+  font-weight: 600;
+}
+.sculpture-status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8b9e74;
+  box-shadow: 0 0 8px #8b9e74;
+}
+
+.sculpture-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-block: 6px;
+}
+
+.sculpture-layer-code {
+  transform: translate3d(calc(var(--ptr-x, 0) * -4px), calc(var(--ptr-y, 0) * -3px), 0);
+  transition: transform 0.35s var(--ease-out);
+}
+.sculpture-layer-ui {
+  transform: translate3d(calc(var(--ptr-x, 0) * 5px), calc(var(--ptr-y, 0) * 4px), 0);
+  transition: transform 0.35s var(--ease-out);
+}
+
+.signal-path {
+  stroke-dasharray: 5 5;
+  animation: signal-flow 8s linear infinite;
+}
+.signal-path.path-2 {
+  animation-delay: -2.5s;
+}
+.signal-path.path-3 {
+  animation-delay: -5s;
+}
+@keyframes signal-flow {
+  to {
+    stroke-dashoffset: -60;
+  }
+}
+
+.sculpture-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #ffffff12;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+.sculpture-coords {
+  font-size: 11px;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+.sculpture-coords code {
+  font-family: monospace;
+  background: #ffffff0f;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+
+/* --- 2. Animated Service Icons --- */
+.service-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #ffffff0a;
+  border: 1px solid #ffffff1a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  flex-shrink: 0;
+  transition: border-color var(--dur-base) var(--ease-out), background-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+.service-icon-svg {
+  width: 24px;
+  height: 24px;
+}
+.page-index .preview-meta .service-number {
+  margin-right: auto;
+  margin-left: 4px;
+}
+.service-preview:hover .service-icon-wrap,
+.service-preview:focus-visible .service-icon-wrap {
+  border-color: #d9c7a566;
+  background: #d9c7a517;
+  transform: scale(1.05);
+}
+
+/* Micro-animations on hover / focus / scroll entry */
+.icon-web .svg-hero-block,
+.icon-web .svg-line-1,
+.icon-web .svg-line-2,
+.icon-auto .auto-connector,
+.icon-auto .auto-node-3,
+.icon-booking .cal-slot-2 {
+  transition: transform 0.55s var(--ease-out), stroke-dashoffset 0.65s var(--ease-out), opacity 0.45s var(--ease-out);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.icon-auto .auto-connector {
+  stroke-dasharray: 28;
+  stroke-dashoffset: 10;
+}
+.service-preview:hover .icon-web .svg-hero-block,
+.service-preview:focus-visible .icon-web .svg-hero-block {
+  transform: scale(1.08);
+}
+.service-preview:hover .icon-web .svg-line-1,
+.service-preview:focus-visible .icon-web .svg-line-1 {
+  transform: translateX(2px);
+}
+.service-preview:hover .icon-auto .auto-connector,
+.service-preview:focus-visible .icon-auto .auto-connector {
+  stroke-dashoffset: 0;
+}
+.service-preview:hover .icon-auto .auto-node-3,
+.service-preview:focus-visible .icon-auto .auto-node-3 {
+  transform: scale(1.14);
+}
+.service-preview:hover .icon-booking .cal-slot-2,
+.service-preview:focus-visible .icon-booking .cal-slot-2 {
+  transform: translateX(-2px) scaleX(1.12);
+}
+
+/* --- 3. "From Idea to Launch" Connected Journey Timeline --- */
+.journey-track-wrap {
+  position: relative;
+  --journey-progress: 25%;
+}
+
+.journey-line {
+  position: relative;
+  height: 2px;
+  background: #ffffff1a;
+  border-radius: 99px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+.journey-line-fill {
+  display: block;
+  height: 100%;
+  width: var(--journey-progress, 25%);
+  background: linear-gradient(90deg, #b89f72 0%, #dfc89f 70%, #f5efe2 100%);
+  box-shadow: 0 0 16px #dfc89f80;
+  transition: width 0.6s var(--ease-out);
+}
+
+.journey-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.journey-step {
+  position: relative;
+  border-radius: 24px;
+  padding: 26px 24px 28px;
+  background: linear-gradient(180deg, #191b16 0%, #131511 100%);
+  border: 1px solid #ffffff14;
+  transition: border-color var(--dur-base) var(--ease-out), background-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+  cursor: pointer;
+  outline: none;
+}
+.journey-step:hover,
+.journey-step:focus-visible,
+.journey-step.is-active {
+  border-color: #d9c7a566;
+  background: linear-gradient(180deg, #21241c 0%, #161813 100%);
+  box-shadow: 0 22px 48px -22px #000000cc, inset 0 1px 0 #ffffff22;
+  transform: translateY(-4px);
+}
+
+.journey-node {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.journey-num {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+.journey-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #ffffff0a;
+  border: 1px solid #ffffff17;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  transition: transform var(--dur-base) var(--ease-out), border-color var(--dur-base);
+}
+.journey-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.journey-step.is-active .journey-icon,
+.journey-step:hover .journey-icon {
+  border-color: #dfc89f66;
+  transform: scale(1.08);
+}
+
+.journey-step h3 {
+  font-size: 20px;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+.journey-step p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+/* --- 4. Interactive Live Project Showcases --- */
+.case-summary {
+  margin-top: 16px;
+  max-width: 34em;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #464c3a;
+}
+
+.case-tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.case-tech-pills span {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: #272b2012;
+  border: 1px solid #272b2024;
+  color: #2c3222;
+}
+
+.live-project-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.live-project-card {
+  border-radius: 32px;
+  background: linear-gradient(160deg, #1b1e18 0%, #141612 100%);
+  border: 1px solid #ffffff17;
+  box-shadow: 0 24px 60px -28px #000000cc, inset 0 1px 0 #ffffff17;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.5s var(--ease-out), border-color var(--dur-base), box-shadow 0.5s var(--ease-out);
+}
+.live-project-card:hover {
+  transform: translateY(-5px);
+  border-color: #d9c7a54d;
+  box-shadow: 0 32px 72px -24px #000000e6, inset 0 1px 0 #ffffff26;
+}
+
+.live-project-window {
+  margin: 24px 24px 0;
+  border-radius: 18px;
+  background: #f0f0e9;
+  color: #2c3327;
+  box-shadow: 0 16px 40px #00000059;
+  overflow: hidden;
+}
+
+.live-window-body {
+  padding: 16px 18px 18px;
+}
+
+.live-stat-row,
+.live-slot-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.live-stat-row > span,
+.live-slot-strip > span {
+  background: #e2e5da;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 11px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+}
+.live-stat-row strong {
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+  color: #202920;
+}
+.live-slot-strip .slot-open {
+  background: #dce7d2;
+  color: #2f4924;
+  font-weight: 600;
+}
+
+.live-mock-rows > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 12px;
+  background: #fafaf6;
+  border-radius: 9px;
+  font-size: 11.5px;
+  margin-top: 7px;
+}
+.live-mock-rows i {
+  font-style: normal;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+.chip-new {
+  background: #f4ecd5;
+  color: #796022;
+}
+.chip-prog {
+  background: #dce7d2;
+  color: #36502b;
+}
+
+.live-project-body {
+  padding: 28px 30px 32px;
+}
+.live-project-body h3 {
+  font-size: clamp(22px, 2.2vw, 28px);
+  margin-top: 8px;
+}
+
+.project-problem-solution {
+  margin: 18px 0 24px;
+  border-top: 1px solid var(--line);
+}
+.project-problem-solution > div {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+.project-problem-solution dt {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 600;
+}
+.project-problem-solution dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.live-project-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Examples page window bar & metadata tags */
+.study-window-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #2735221a;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+.study-copy .service-number {
+  display: block;
+  color: var(--gold);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  margin-bottom: 6px;
+}
+.study-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+.study-meta-tags span {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: #ffffff0a;
+  border: 1px solid #ffffff17;
+  color: var(--muted);
+}
+
+/* --- 5. Interactive Client Project Inquiry (Contact Page) --- */
+.project-type-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.project-type-card {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 14px 14px 13px;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1.5px solid #b8bfb0;
+  color: #20241b;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease-out), background-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+}
+.project-type-card:hover {
+  border-color: #77643e;
+  background: #faf9f4;
+}
+.project-type-card[aria-pressed="true"] {
+  background: #20241b;
+  border-color: #20241b;
+  color: #f5f5f2;
+  box-shadow: 0 8px 20px -6px #20241b40;
+}
+.pt-icon {
+  font-size: 14px;
+  color: #77643e;
+  margin-bottom: 6px;
+  font-family: monospace;
+}
+.project-type-card[aria-pressed="true"] .pt-icon {
+  color: #dfc89f;
+}
+.pt-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.pt-desc {
+  font-size: 11px;
+  color: #62665b;
+  margin-top: 3px;
+  line-height: 1.4;
+}
+.project-type-card[aria-pressed="true"] .pt-desc {
+  color: #c2c1b8;
+}
+
+@media (scripting: enabled) {
+  .sr-select-sync {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    pointer-events: none;
+  }
+}
+@media (scripting: none) {
+  .project-type-grid {
+    display: none;
+  }
+}
+
+.form-row-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* --- 6. Responsive Breakpoints for New Studio Components --- */
+@media (max-width: 1000px) {
+  .hero-stage-grid {
+    grid-template-columns: 1fr;
+  }
+  .journey-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .live-project-pair {
+    grid-template-columns: 1fr;
+  }
+  .project-type-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .journey-grid {
+    grid-template-columns: 1fr;
+  }
+  .live-project-window {
+    margin: 18px 18px 0;
+  }
+  .live-project-body {
+    padding: 22px 20px 24px;
+  }
+  .live-stat-row,
+  .live-slot-strip {
+    grid-template-columns: 1fr;
+  }
+  .form-row-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signal-path {
+    animation: none !important;
+  }
+  .sculpture-layer-code,
+  .sculpture-layer-ui,
+  .journey-step:hover,
+  .live-project-card:hover {
+    transform: none !important;
+  }
+}

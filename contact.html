@@ -18,26 +18,126 @@
               <div class="contact-address">
                 <p class="eyebrow"><span lang="ja">メールでもご相談いただけます</span><span lang="en">You can also email us directly</span></p><a href="mailto:wingscraft.studio@gmail.com">wingscraft.studio@gmail.com</a><p class="caption"><span lang="ja">日本語・英語に対応</span><span lang="en">Available in Japanese and English</span></p></div></aside>
                 <div>
-                  <noscript><p class=""><span lang="ja">JavaScriptが無効な場合は、掲載のメールアドレスへ直接ご連絡ください。</span><span lang="en">If JavaScript is disabled, please use the email address shown here.</span></p></noscript><form id="contact-form" action="mailto:wingscraft.studio@gmail.com" method="get" aria-describedby="form-help"><h2><span lang="ja">お問い合わせフォーム</span><span lang="en">Inquiry form</span></h2><p id="form-help"></p><label for="service"><span lang="ja">ご相談の種類</span><span lang="en">What can we help with?</span></label><select id="service" name="service"><option value="general" data-ja="まずは相談したい" data-en="Not sure yet">まずは相談したい</option><option value="web" data-ja="Webサイト制作" data-en="Website development">Webサイト制作</option><option value="automation" data-ja="業務の自動化" data-en="Workflow automation">業務の自動化</option><option value="booking" data-ja="予約ツール開発" data-en="Booking tool development">予約ツール開発</option></select><label for="name"><span lang="ja">お名前</span><span lang="en">Name</span></label><input id="name" name="name" type="text" autocomplete="name" maxlength="150" required><label for="email"><span lang="ja">返信先メール</span><span lang="en">Email</span></label><input id="email" name="email" type="email" autocomplete="email" maxlength="150" required><label for="company"><span lang="ja">事業名（任意）</span><span lang="en">Business (optional)</span></label><input id="company" name="company" type="text" autocomplete="organization" maxlength="150" ><label for="message"><span lang="ja">ご相談内容</span><span lang="en">Project details</span></label><textarea id="message" name="message" rows="7" maxlength="3000" required placeholder="3,000文字以内。&#10;希望する時期や予算があれば、&#10;あわせてご記入ください。"></textarea>
+                  <noscript><p class=""><span lang="ja">JavaScriptが無効な場合は、掲載のメールアドレスへ直接ご連絡ください。</span><span lang="en">If JavaScript is disabled, please use the email address shown here.</span></p></noscript>
+                  <form id="contact-form" action="mailto:wingscraft.studio@gmail.com" method="get" aria-describedby="form-help">
+                    <h2><span lang="ja">プロジェクトのご相談</span><span lang="en">Start a project inquiry</span></h2>
+                    <p id="form-help"></p>
+
+                    <label for="service"><span lang="ja">ご相談の種類</span><span lang="en">Project type</span></label>
+                    <div class="project-type-grid" id="project-type-grid" role="group" aria-label="Project type">
+                      <button type="button" class="project-type-card" data-service-card="web" aria-pressed="false">
+                        <span class="pt-icon" aria-hidden="true">◻</span>
+                        <span class="pt-title"><span lang="ja">Webサイト制作</span><span lang="en">Website</span></span>
+                        <span class="pt-desc"><span lang="ja">店舗・事業サイト</span><span lang="en">Brand &amp; business site</span></span>
+                      </button>
+                      <button type="button" class="project-type-card" data-service-card="webapp" aria-pressed="false">
+                        <span class="pt-icon" aria-hidden="true">⊞</span>
+                        <span class="pt-title"><span lang="ja">Webアプリ</span><span lang="en">Web Application</span></span>
+                        <span class="pt-desc"><span lang="ja">業務画面・顧客向け機能</span><span lang="en">Interactive web app</span></span>
+                      </button>
+                      <button type="button" class="project-type-card" data-service-card="automation" aria-pressed="false">
+                        <span class="pt-icon" aria-hidden="true">⇄</span>
+                        <span class="pt-title"><span lang="ja">業務の自動化</span><span lang="en">Workflow Automation</span></span>
+                        <span class="pt-desc"><span lang="ja">一覧化・通知・集計</span><span lang="en">Triage &amp; notifications</span></span>
+                      </button>
+                      <button type="button" class="project-type-card" data-service-card="booking" aria-pressed="false">
+                        <span class="pt-icon" aria-hidden="true">▦</span>
+                        <span class="pt-title"><span lang="ja">予約システム</span><span lang="en">Booking System</span></span>
+                        <span class="pt-desc"><span lang="ja">受付・予約枠の管理</span><span lang="en">Scheduling &amp; intake</span></span>
+                      </button>
+                      <button type="button" class="project-type-card" data-service-card="custom" aria-pressed="false">
+                        <span class="pt-icon" aria-hidden="true">&lt;/&gt;</span>
+                        <span class="pt-title"><span lang="ja">カスタム開発</span><span lang="en">Custom Software</span></span>
+                        <span class="pt-desc"><span lang="ja">専用ツール・複合構成</span><span lang="en">Tailored internal tool</span></span>
+                      </button>
+                      <button type="button" class="project-type-card" data-service-card="general" aria-pressed="true">
+                        <span class="pt-icon" aria-hidden="true">✦</span>
+                        <span class="pt-title"><span lang="ja">まずは相談したい</span><span lang="en">Not Sure Yet</span></span>
+                        <span class="pt-desc"><span lang="ja">仕様未定・課題の整理から</span><span lang="en">Explore options together</span></span>
+                      </button>
+                    </div>
+
+                    <select id="service" name="service" class="sr-select-sync">
+                      <option value="general" data-ja="まずは相談したい" data-en="Not sure yet">まずは相談したい</option>
+                      <option value="web" data-ja="Webサイト制作" data-en="Website">Webサイト制作</option>
+                      <option value="webapp" data-ja="Webアプリケーション" data-en="Web Application">Webアプリケーション</option>
+                      <option value="automation" data-ja="業務の自動化" data-en="Workflow Automation">業務の自動化</option>
+                      <option value="booking" data-ja="予約ツール開発" data-en="Booking System">予約ツール開発</option>
+                      <option value="custom" data-ja="カスタムソフトウェア開発" data-en="Custom Software">カスタムソフトウェア開発</option>
+                    </select>
+
+                    <div class="form-row-grid">
+                      <div>
+                        <label for="timeline"><span lang="ja">希望する時期（任意）</span><span lang="en">Target timeline (optional)</span></label>
+                        <select id="timeline" name="timeline">
+                          <option value="" data-ja="未定・相談して決めたい" data-en="Flexible / Not decided yet">未定・相談して決めたい</option>
+                          <option value="1-2m" data-ja="1〜2ヶ月以内" data-en="Within 1–2 months">1〜2ヶ月以内</option>
+                          <option value="3m" data-ja="3ヶ月以内" data-en="Within 3 months">3ヶ月以内</option>
+                          <option value="6m" data-ja="半年以内" data-en="Within 6 months">半年以内</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label for="budget"><span lang="ja">ご予算の目安（任意）</span><span lang="en">Estimated budget (optional)</span></label>
+                        <select id="budget" name="budget">
+                          <option value="" data-ja="未定・相談して決めたい" data-en="Undecided / Discuss scope first">未定・相談して決めたい</option>
+                          <option value="pilot" data-ja="〜¥100,000（モニター・小規模）" data-en="Up to ¥100,000 (Pilot / Small scope)">〜¥100,000（モニター・小規模）</option>
+                          <option value="standard" data-ja="¥100,000〜¥300,000" data-en="¥100,000 – ¥300,000">¥100,000〜¥300,000</option>
+                          <option value="custom" data-ja="¥300,000〜" data-en="¥300,000+">¥300,000〜</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-row-grid">
+                      <div>
+                        <label for="name"><span lang="ja">お名前</span><span lang="en">Name</span></label>
+                        <input id="name" name="name" type="text" autocomplete="name" maxlength="150" required>
+                      </div>
+                      <div>
+                        <label for="email"><span lang="ja">返信先メール</span><span lang="en">Email</span></label>
+                        <input id="email" name="email" type="email" autocomplete="email" maxlength="150" required>
+                      </div>
+                    </div>
+
+                    <label for="company"><span lang="ja">事業名（任意）</span><span lang="en">Business (optional)</span></label>
+                    <input id="company" name="company" type="text" autocomplete="organization" maxlength="150">
+
+                    <label for="message"><span lang="ja">ご相談内容・ほしい機能</span><span lang="en">Project details &amp; desired functionality</span></label>
+                    <textarea id="message" name="message" rows="7" maxlength="3000" required placeholder="3,000文字以内。&#10;実現したいことや、困っている作業をご記入ください。"></textarea>
                     <div class="form-assist-bar">
                       <button type="button" class="template-btn" id="insert-template-btn">
-                      <span aria-hidden="true">📝</span>
-                      <span lang="ja">相談テンプレートを挿入</span>
-                      <span lang="en">Insert inquiry template</span>
+                        <span aria-hidden="true">📝</span>
+                        <span lang="ja">相談テンプレートを挿入</span>
+                        <span lang="en">Insert inquiry template</span>
                       </button>
                       <span class="char-count" id="char-count" aria-live="polite">
-                      <span lang="ja">残り 3,000 文字</span>
-                      <span lang="en">3,000 characters left</span>
+                        <span lang="ja">残り 3,000 文字</span>
+                        <span lang="en">3,000 characters left</span>
                       </span>
                     </div>
                     <div class="spam-trap" aria-hidden="true">
-                      <label for="website">Leave this field empty</label><input id="website" name="_gotcha" autocomplete="off" tabindex="-1"></div>
-                      <div class="form-actions">
-                        <button class="btn" type="submit" id="send-inquiry"><span lang="ja">メールソフトで確認する</span><span lang="en">Review in mail app</span></button><button class="copy" type="button" id="copy-message"><span lang="ja">内容をコピー</span><span lang="en">Copy message</span></button></div>
-                        <p id="form-status" role="status" aria-live="polite" tabindex="-1"></p></form></div></section>
-                        <section class="section wrap narrow">
-                          <h2><span lang="ja">相談した後は？</span><span lang="en">What happens next?</span></h2><details><summary><span lang="ja">最初に何を確認しますか？</span><span lang="en">What do you need to know first?</span></summary><p class=""><span lang="ja">目的、現在の状況、必要な範囲を確認します。そのうえで追加の質問や、進め方をご案内します。</span><span lang="en">We review your goals, current situation and likely scope, then follow up with questions and a suggested approach.</span></p></details>
-                          <details><summary><span lang="ja">相談したら依頼が確定しますか？</span><span lang="en">Does an inquiry commit me to a project?</span></summary><p class=""><span lang="ja">お問い合わせのみで制作が始まることはありません。内容・費用・スケジュールを確認し、合意のうえで進めます。</span><span lang="en">An inquiry does not start a project. Work proceeds after the scope, cost and schedule have been discussed and agreed.</span></p></details></section></main>
+                      <label for="website">Leave this field empty</label><input id="website" name="_gotcha" autocomplete="off" tabindex="-1">
+                    </div>
+                    <div class="form-actions">
+                      <button class="btn" type="submit" id="send-inquiry"><span lang="ja">メールソフトで確認する</span><span lang="en">Review in mail app</span></button>
+                      <button class="copy" type="button" id="copy-message"><span lang="ja">内容をコピー</span><span lang="en">Copy message</span></button>
+                    </div>
+                    <p id="form-status" role="status" aria-live="polite" tabindex="-1"></p>
+                  </form>
+                </div>
+              </section>
+              <section class="section wrap narrow">
+                <h2><span lang="ja">相談した後は？</span><span lang="en">What happens next?</span></h2>
+                <details><summary><span lang="ja">最初に何を確認しますか？</span><span lang="en">What do you need to know first?</span></summary><p class=""><span lang="ja">目的、現在の状況、必要な範囲を確認します。そのうえで追加の質問や、進め方をご案内します。</span><span lang="en">We review your goals, current situation and likely scope, then follow up with questions and a suggested approach.</span></p></details>
+                <details><summary><span lang="ja">相談したら依頼が確定しますか？</span><span lang="en">Does an inquiry commit me to a project?</span></summary><p class=""><span lang="ja">お問い合わせのみで制作が始まることはありません。内容・費用・スケジュールを確認し、合意のうえで進めます。</span><span lang="en">An inquiry does not start a project. Work proceeds after the scope, cost and schedule have been discussed and agreed.</span></p></details>
+              </section>
+              <section class="closing wrap">
+                <h2><span lang="ja"><span class="phrase">アイデアを、確かな形に。</span><br><span class="phrase gold">一緒につくりませんか。</span></span><span lang="en">Have an idea?<br><span class="gold">Let’s build something exceptional.</span></span></h2>
+                <p class="lead"><span lang="ja">小さな改善から新規制作まで、まずはお気軽にお聞かせください。</span><span lang="en">From a focused workflow tool to a complete website, start the conversation above or explore our live demos.</span></p>
+                <div class="actions">
+                  <a class="btn" href="#contact-form"><span lang="ja">フォームへ移動する</span><span lang="en">Start your inquiry</span></a>
+                  <a class="text-link" href="examples.html"><span lang="ja">ライブデモを見る</span><span lang="en">Explore live demos</span></a>
+                </div>
+              </section></main>
                           <footer><div class="wrap footer-grid">
                               <div><a class="logo" href="index.html"><img src="assets/logo.svg" width="160" height="40" alt="Wingscraft"></a><p class=""><span lang="ja">小さな事業のための、Webとソフトウェア。</span><span lang="en">Websites and software for small businesses.</span></p></div>
                               <div>

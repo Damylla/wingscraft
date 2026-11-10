@@ -2,12 +2,35 @@
 (() => {
  const form=document.getElementById('contact-form'); if(!form)return;
  const service=document.getElementById('service'), message=document.getElementById('message');
+ const timeline=document.getElementById('timeline'), budget=document.getElementById('budget');
+ const typeCards=[...document.querySelectorAll('[data-service-card]')];
  const status=document.getElementById('form-status'), submit=document.getElementById('send-inquiry');
  const endpoint=window.WINGSCRAFT_CONFIG?.formspreeEndpoint || '';
  const direct=window.WingscraftTransport.validEndpoint(endpoint);
- const labels={general:['まずは相談したい','Not sure yet'],web:['Webサイト制作','Website development'],automation:['業務の自動化','Workflow automation'],booking:['予約ツール開発','Booking tool development']};
+ const labels={
+  general:['まずは相談したい','Not sure yet'],
+  web:['Webサイト制作','Website'],
+  webapp:['Webアプリケーション','Web Application'],
+  automation:['業務の自動化','Workflow Automation'],
+  booking:['予約ツール開発','Booking System'],
+  custom:['カスタムソフトウェア開発','Custom Software']
+ };
  const params=new URLSearchParams(location.search);
  if(Object.hasOwn(labels,params.get('service'))) service.value=params.get('service');
+
+ function syncServiceCards(){
+  typeCards.forEach(card=>{
+   card.setAttribute('aria-pressed', String(card.dataset.serviceCard === service.value));
+  });
+ }
+ typeCards.forEach(card=>{
+  card.addEventListener('click',()=>{
+   service.value = card.dataset.serviceCard;
+   syncServiceCards();
+   service.dispatchEvent(new Event('change'));
+  });
+ });
+ service.addEventListener('change', syncServiceCards);
  const references={sumi:'Sumi Coffee',inquiries:'Inquiry desk',booking:'Booking desk'};
  const example=Object.hasOwn(references,params.get('example'))?references[params.get('example')]:'';
  let state='',busy=false;
@@ -31,12 +54,14 @@
   try {
    const data = {
     service: service.value,
+    timeline: timeline ? timeline.value : '',
+    budget: budget ? budget.value : '',
     name: form.elements.name.value,
     email: form.elements.email.value,
     company: form.elements.company.value,
     message: form.elements.message.value
    };
-   if (data.name || data.email || data.company || data.message) {
+   if (data.name || data.email || data.company || data.message || data.timeline || data.budget) {
     sessionStorage.setItem(DRAFT_KEY, JSON.stringify(data));
    } else {
     sessionStorage.removeItem(DRAFT_KEY);
@@ -57,6 +82,8 @@
    const data = JSON.parse(raw);
    if (!data) return;
    if (!params.get('service') && data.service && Object.hasOwn(labels, data.service)) service.value = data.service;
+   if (timeline && data.timeline) timeline.value = data.timeline;
+   if (budget && data.budget) budget.value = data.budget;
    if (data.name) form.elements.name.value = data.name;
    if (data.email) form.elements.email.value = data.email;
    if (data.company) form.elements.company.value = data.company;
@@ -162,10 +189,14 @@
 
  function render(){
   const ja=document.documentElement.lang==='ja';
-  for(const option of service.options)option.textContent=option.dataset[ja?'ja':'en'];
+  for(const sel of [service, timeline, budget]){
+   if(!sel) continue;
+   for(const option of sel.options) if(option.dataset[ja?'ja':'en']) option.textContent=option.dataset[ja?'ja':'en'];
+  }
+  syncServiceCards();
   submit.textContent=busy?t('送信中…','Sending…'):direct?t('相談内容を送信する','Send your inquiry'):t('メールソフトで確認する','Review in mail app');
   document.getElementById('form-help').textContent=direct?t('入力内容を確認して送信してください。Wingscraft宛てにご相談をお送りします。','Review your details and submit your inquiry to Wingscraft.'):t('内容をまとめて、メールソフトで確認・送信できます。このページから直接送信はされません。','Prepare your inquiry here, then review and send it in your mail app. This page does not send the message itself.');
-  message.placeholder=t('3,000文字以内。希望する時期や予算があれば、あわせてご記入ください。','Up to 3,000 characters. Include preferred timing or budget if you have them.');
+  message.placeholder=t('3,000文字以内。実現したいことや、困っている作業をご記入ください。','Up to 3,000 characters. Describe what you would like to build or improve.');
   status.textContent=state?notices[state][ja?0:1]:'';
   status.dataset.state=state;
   updateDraftBannerText();
@@ -173,7 +204,23 @@
   if(state === 'success') showSuccessCard();
  }
  function setState(value){state=value;render();}
- function bodyText(){const data=new FormData(form);return [t('ご相談の種類: ','Service: ')+labels[service.value][document.documentElement.lang==='ja'?0:1],t('お名前: ','Name: ')+data.get('name'),t('返信先: ','Reply email: ')+data.get('email'),t('事業名: ','Business: ')+data.get('company'),...(example?[t('参考の制作例: ','Reference concept: ')+example]:[]),'',data.get('message')].join('\r\n');}
+ function bodyText(){
+  const ja=document.documentElement.lang==='ja';
+  const data=new FormData(form);
+  const tlText=timeline&&timeline.value?timeline.selectedOptions[0]?.dataset[ja?'ja':'en']:'';
+  const bgText=budget&&budget.value?budget.selectedOptions[0]?.dataset[ja?'ja':'en']:'';
+  return [
+   t('ご相談の種類: ','Project type: ')+labels[service.value][ja?0:1],
+   ...(tlText?[t('希望する時期: ','Target timeline: ')+tlText]:[]),
+   ...(bgText?[t('ご予算の目安: ','Estimated budget: ')+bgText]:[]),
+   t('お名前: ','Name: ')+data.get('name'),
+   t('返信先: ','Reply email: ')+data.get('email'),
+   t('事業名: ','Business: ')+data.get('company'),
+   ...(example?[t('参考の制作例: ','Reference concept: ')+example]:[]),
+   '',
+   data.get('message')
+  ].join('\r\n');
+ }
  function lock(value){busy=value;for(const field of form.querySelectorAll('input,textarea,select,button'))field.disabled=value;form.setAttribute('aria-busy',String(value));render();}
  form.addEventListener('submit',async event=>{
   event.preventDefault();if(busy)return;for(const field of ['name','email','message'])form.elements[field].value=form.elements[field].value.trim();if(!form.reportValidity())return;
