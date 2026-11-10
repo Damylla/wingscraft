@@ -1,0 +1,25 @@
+﻿{
+  "name": "Wingscraft",
+  "short_name": "Wingscraft",
+  "description": "æ±äº¬ã‚’æ‹ ç‚¹ã«ã€Webã‚µã‚¤ãƒˆãƒ»Webã‚¢ãƒ—ãƒªãƒ»æ¥­å‹™ã®è‡ªå‹•åŒ–ã‚’è¨­è¨ˆã™ã‚‹ç‹¬ç«‹ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢é–‹ç™ºã‚¹ã‚¿ã‚¸ã‚ª",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#10110f",
+  "theme_color": "#10110f",
+  "lang": "ja",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "scope": "./"
+}

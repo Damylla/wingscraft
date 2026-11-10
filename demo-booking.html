@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>予約管理デモ — Wingscraft</title><meta name="description" content="予約の追加・変更・キャンセルを試せる操作デモ。"><meta name="robots" content="noindex,follow"><meta name="theme-color" content="#171b17"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><script>'use strict';(()=>{let p;try{p=localStorage.getItem('wingscraft-language-choice')}catch{}const r=(navigator.languages&&navigator.languages[0])||navigator.language||'en';const a=/^ja(?:-|$)/i.test(r)?'ja':'en';document.documentElement.lang=p==='ja'||p==='en'?p:a})()</script><link rel="stylesheet" href="demo.css?v=polish3"><link rel="canonical" href="https://wingscraft.dev/demo-booking.html"><link rel="alternate" hreflang="ja" href="https://wingscraft.dev/demo-booking.html"><link rel="alternate" hreflang="en" href="https://wingscraft.dev/demo-booking.html"><link rel="alternate" hreflang="x-default" href="https://wingscraft.dev/demo-booking.html"></head>
+  <body data-demo="booking"><a class="skip" href="#main"><span lang="ja">本文へ移動</span><span lang="en">Skip to content</span></a><header class="demo-bar"><a href="examples.html" class="back"><span lang="ja">← 制作例へ</span><span lang="en">← All work</span></a><span class="demo-brand">wingscraft<span class="demo-label"><span lang="ja">操作デモ</span><span lang="en">Interactive demo</span></span></span><button id="demo-language" type="button"><span lang="ja">EN</span><span lang="en">JP</span></button></header>
+    <div class="demo-shell">
+      <aside class="demo-sidebar"><div class="workspace-icon" aria-hidden="true">w.</div>
+        <nav aria-label="デモ / Demos"><a href="demo-inquiries.html" ><span aria-hidden="true">▤</span><span lang="ja">問い合わせ管理</span><span lang="en">Inquiries</span></a><a href="demo-booking.html" aria-current="page"><span aria-hidden="true">▦</span><span lang="ja">予約管理</span><span lang="en">Bookings</span></a></nav></aside>
+        <main id="main"><div class="demo-heading">
+            <div>
+              <h1><span lang="ja">予約管理</span><span lang="en">Booking desk</span></h1><p class="intro"><span lang="ja">まずは空いている時刻を選び、予約を1件追加してみましょう。</span><span lang="en">Start by choosing an available time and adding a booking.</span></p></div>
+              <button class="quiet" id="reset-demo" type="button"><span lang="ja">最初の状態に戻す</span><span lang="en">Reset demo</span></button></div>
+              <details class="demo-help"><summary><span lang="ja">デモについて</span><span lang="en">About this demo</span></summary><p><span lang="ja">架空の情報を使った操作デモです。外部送信・実際の予約は行いません。変更は再読み込みでリセットされます。実際の個人情報は入力しないでください。</span><span lang="en">Fictional data, no external submissions or real bookings. Reloading resets changes. Please use fictional details only.</span></p></details>
+              <div id="demo-stats" class="demo-stats"></div>
+              <div id="demo-content"></div>
+              <div class="feedback-bar">
+                <p id="demo-feedback" class="feedback" tabindex="-1" role="status" aria-live="polite"></p><button id="undo-booking" type="button" hidden></button></div>
+                <p class="demo-end"><a href="contact.html?service=booking&example=booking#contact-form"><span lang="ja">このようなツールの開発を相談する ↗</span><span lang="en">Discuss a tool like this ↗</span></a></p><noscript><span lang="ja">このデモの操作にはJavaScriptが必要です。</span><span lang="en">JavaScript is required to use this demo.</span></noscript>
+                <div class="demo-cta-strip">
+                  <div>
+                    <p><strong><span lang="ja">このような予約ツールをお考えですか？</span><span lang="en">Considering a custom booking tool?</span></strong></p>
+                    <small><span lang="ja">貴社のサービス内容や受付ルールに合わせたオーダーメイド開発を承ります。</span><span lang="en">We build custom booking desks tailored to your service rules and daily workflow.</span></small>
+                  </div>
+                  <a class="btn small" href="contact.html?service=booking&example=booking#contact-form"><span lang="ja">予約ツールの相談をする</span><span lang="en">Discuss booking tools</span></a>
+                </div>
+              </main></div>
+              <dialog id="reset-dialog" aria-labelledby="reset-title"><h2 id="reset-title"><span lang="ja">最初の状態に戻しますか？</span><span lang="en">Reset this demo?</span></h2><p><span lang="ja">この画面で変更した内容を取り消し、サンプルデータに戻します。</span><span lang="en">Your changes on this page will be replaced with the original sample data.</span></p><div class="dialog-actions">
+                  <button type="button" class="quiet" id="reset-cancel"><span lang="ja">戻る</span><span lang="en">Keep changes</span></button><button type="button" class="primary" id="reset-confirm"><span lang="ja">リセットする</span><span lang="en">Reset demo</span></button></div></dialog>
+                  <dialog id="inquiry-dialog" aria-labelledby="detail-title"></dialog>
+                  <dialog id="booking-dialog" aria-labelledby="booking-dialog-title"></dialog>
+                  <script defer src="demo.js?v=polish3"></script><button id="back-to-top" type="button" aria-label="ページトップへ戻る">↑</button></body></html>

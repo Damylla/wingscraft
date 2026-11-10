@@ -1,0 +1,19 @@
+{
+  "name": "wingscraft",
+  "version": "1.0.0",
+  "description": "Wingscraft studio website - websites, automation & custom software",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 3000",
+    "check": "python3 scripts/check.py",
+    "format": "python3 scripts/format.py",
+    "test": "npm run check"
+  },
+  "keywords": [
+    "wingscraft",
+    "studio",
+    "software"
+  ],
+  "author": "Wingscraft (Sakurai Yusei & Damlanur Dağhan)",
+  "license": "UNLICENSED"
+}
