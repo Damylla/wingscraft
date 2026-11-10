@@ -1,10 +1,12 @@
 'use strict';
 (() => {
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
+  const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
   const header = document.querySelector('.nav');
   const selectors = [
-    '.service-preview', '.split > div > :is(.eyebrow,h2,.lead,.text-link)',
-    '.workflow-demo', '.work-teaser > div > *', '.work-teaser > .case-art',
+    '.editorial-head > *', '.service-preview',
+    '.stage-kicker', '.split > div > :is(.eyebrow,h2,.lead,.flow-steps-mini,.text-link)',
+    '.workflow-demo', '.teaser-header > *', '.work-teaser > div > *', '.work-teaser > .case-art',
     '.service-detail > .service-visual', '.service-detail > div:not(.service-visual) > *',
     '.section-heading > *', '.scope-grid article', '.profile > *',
     '.case-feature > *', '.booking-study > *', '.roadmap li',
@@ -57,4 +59,20 @@
   addEventListener('scroll', () => {
     if (!scheduled) { scheduled = true; requestAnimationFrame(updateHeader); }
   }, { passive: true });
+
+  // Subtle magnetic button response on fine pointers
+  document.querySelectorAll('.magnetic').forEach(btn => {
+    btn.addEventListener('pointermove', e => {
+      if (preference.matches || !finePointer.matches) return;
+      const r = btn.getBoundingClientRect();
+      const x = ((e.clientX - (r.left + r.width / 2)) / (r.width / 2)) * 4;
+      const y = ((e.clientY - (r.top + r.height / 2)) / (r.height / 2)) * 3;
+      btn.style.setProperty('--mag-x', `${x.toFixed(1)}px`);
+      btn.style.setProperty('--mag-y', `${y.toFixed(1)}px`);
+    });
+    btn.addEventListener('pointerleave', () => {
+      btn.style.setProperty('--mag-x', '0px');
+      btn.style.setProperty('--mag-y', '0px');
+    });
+  });
 })();
