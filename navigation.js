@@ -12,6 +12,7 @@
  function render(){
   button.setAttribute('aria-expanded',String(open));
   header.classList.toggle('menu-open',open);
+  document.documentElement.classList.toggle('menu-lock',open&&mobile.matches);
   nav.inert=mobile.matches&&!open;
   button.setAttribute('aria-label',document.documentElement.lang==='ja'?(open?'メニューを閉じる':'メニューを開く'):(open?'Close menu':'Open menu'));
   if(open && mobile.matches && !header.contains(document.activeElement)){

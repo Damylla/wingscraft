@@ -92,6 +92,16 @@
       sculpture.style.setProperty('--ptr-x', '0');
       sculpture.style.setProperty('--ptr-y', '0');
     });
+    // Restrained scroll-linked depth over the first screen
+    let ticking = false;
+    addEventListener('scroll', () => {
+      if (ticking || preference.matches) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        sculpture.style.setProperty('--scroll', Math.min(scrollY / 700, 1).toFixed(3));
+        ticking = false;
+      });
+    }, { passive: true });
   }
 
   // "From Idea to Launch" interactive journey progression

@@ -54,97 +54,257 @@
             </h1>
           </div>
 
-          <!-- Symbolic Animated Hero Element: Code Brackets & Nodes -> Engineered Interface -->
+          <!-- Floating Digital Workspace + Modular Digital Core (interactive 3D hero composition) -->
           <div class="hero-craft-sculpture" id="hero-sculpture" aria-hidden="true">
-            <div class="sculpture-card">
-              <div class="sculpture-header">
-                <span class="sculpture-tag">ARCHITECTURE · UI · LOGIC</span>
-                <span class="sculpture-status"><i></i>LIVE BLUEPRINT</span>
-              </div>
-              <svg class="sculpture-svg" viewBox="0 0 420 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="goldLine" x1="0" y1="0" x2="420" y2="250" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#d9c7a5" stop-opacity="0.18"/>
-                    <stop offset="50%" stop-color="#dfc89f" stop-opacity="0.85"/>
-                    <stop offset="100%" stop-color="#8b9e74" stop-opacity="0.55"/>
-                  </linearGradient>
-                  <linearGradient id="surfaceGlow" x1="175" y1="28" x2="392" y2="222" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stop-color="#252920" stop-opacity="0.95"/>
-                    <stop offset="100%" stop-color="#151712" stop-opacity="0.95"/>
-                  </linearGradient>
-                </defs>
-                <!-- Subtle coordinate blueprint grid -->
-                <g class="blueprint-grid" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1">
-                  <line x1="24" y1="44" x2="396" y2="44"/>
-                  <line x1="24" y1="125" x2="396" y2="125"/>
-                  <line x1="24" y1="206" x2="396" y2="206"/>
-                  <line x1="112" y1="20" x2="112" y2="230"/>
-                  <line x1="248" y1="20" x2="248" y2="230"/>
-                </g>
+            <div class="obj-stage">
+              <div class="ws-scene">
+                <div class="ws">
+                  <!-- Ambient warm bronze backlight -->
+                  <div class="ws-ambient"></div>
 
-                <!-- Left: Symbolic Code Layer (</> and { } + logic nodes) -->
-                <g class="sculpture-layer-code">
-                  <rect x="22" y="36" width="114" height="76" rx="14" fill="#171a14" stroke="#ffffff" stroke-opacity="0.14"/>
-                  <!-- < / > geometric brackets -->
-                  <path class="code-glyph" d="M52 64L40 74L52 84" stroke="#dfc89f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path class="code-glyph" d="M74 60L64 88" stroke="#dfc89f" stroke-opacity="0.65" stroke-width="1.8" stroke-linecap="round"/>
-                  <path class="code-glyph" d="M86 64L98 74L86 84" stroke="#dfc89f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <line x1="40" y1="96" x2="96" y2="96" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2" stroke-linecap="round"/>
+                  <!-- Sweeping orbital rings + luminous nodes -->
+                  <svg class="ws-orbits" viewBox="0 0 600 500" fill="none">
+                    <defs>
+                      <linearGradient id="orbGrad1" x1="0%" y1="50%" x2="100%" y2="50%">
+                        <stop offset="0%" stop-color="#dfc89f" stop-opacity="0.12"/>
+                        <stop offset="28%" stop-color="#f3dfc0" stop-opacity="0.72"/>
+                        <stop offset="70%" stop-color="#dfc89f" stop-opacity="0.28"/>
+                        <stop offset="100%" stop-color="#dfc89f" stop-opacity="0.65"/>
+                      </linearGradient>
+                      <linearGradient id="orbGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#dfc89f" stop-opacity="0.05"/>
+                        <stop offset="50%" stop-color="#dfc89f" stop-opacity="0.38"/>
+                        <stop offset="100%" stop-color="#dfc89f" stop-opacity="0.08"/>
+                      </linearGradient>
+                      <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#fff9eb" stop-opacity="1"/>
+                        <stop offset="35%" stop-color="#ecd2a4" stop-opacity="0.85"/>
+                        <stop offset="100%" stop-color="#dfc89f" stop-opacity="0"/>
+                      </radialGradient>
+                    </defs>
+                    <!-- Upper tilted main orbital arc -->
+                    <ellipse cx="305" cy="215" rx="268" ry="86" transform="rotate(-11 305 215)" stroke="url(#orbGrad1)" stroke-width="1.15"/>
+                    <!-- Secondary lower orbital ring around pedestal -->
+                    <ellipse cx="326" cy="348" rx="205" ry="56" transform="rotate(-4 326 348)" stroke="url(#orbGrad2)" stroke-width="1"/>
+                    <!-- Vertical light filaments -->
+                    <line x1="252" y1="90" x2="252" y2="395" stroke="#dfc89f" stroke-opacity="0.12" stroke-width="0.8" stroke-dasharray="2 4"/>
+                    <line x1="344" y1="160" x2="344" y2="420" stroke="#dfc89f" stroke-opacity="0.14" stroke-width="0.8"/>
+                    <!-- Glowing orbital nodes -->
+                    <g class="ws-orb-node n-left">
+                      <circle cx="80" cy="274" r="14" fill="url(#nodeGlow)"/>
+                      <circle cx="80" cy="274" r="3.2" fill="#fff8e8"/>
+                    </g>
+                    <g class="ws-orb-node n-top">
+                      <circle cx="384" cy="126" r="11" fill="url(#nodeGlow)"/>
+                      <circle cx="384" cy="126" r="2.4" fill="#fff8e8"/>
+                    </g>
+                    <g class="ws-orb-node n-right">
+                      <circle cx="556" cy="196" r="14" fill="url(#nodeGlow)"/>
+                      <circle cx="556" cy="196" r="3.2" fill="#fff8e8"/>
+                    </g>
+                  </svg>
 
-                  <!-- { } structural node block -->
-                  <rect x="22" y="136" width="114" height="78" rx="14" fill="#171a14" stroke="#ffffff" stroke-opacity="0.14"/>
-                  <text x="40" y="172" fill="#d9c7a5" font-family="monospace" font-size="16" font-weight="600">{ }</text>
-                  <line x1="72" y1="162" x2="116" y2="162" stroke="#8b9e74" stroke-width="2.5" stroke-linecap="round"/>
-                  <line x1="72" y1="174" x2="104" y2="174" stroke="#ffffff" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round"/>
-                  <line x1="40" y1="192" x2="112" y2="192" stroke="#ffffff" stroke-opacity="0.16" stroke-width="2" stroke-linecap="round"/>
-                </g>
+                  <!-- 1. Back-left: Floating Code Editor -->
+                  <div class="ws-mod ws-editor">
+                    <div class="ws-bar">
+                      <span class="ws-dots"><i></i><i></i><i></i></span>
+                    </div>
+                    <div class="ws-editor-body">
+                      <div class="ws-editor-side">
+                        <span><i></i><b></b></span>
+                        <span><i></i><b></b></span>
+                        <span><i></i><b></b></span>
+                        <span><i></i><b></b></span>
+                        <span><i></i><b></b></span>
+                      </div>
+                      <div class="ws-editor-code">
+                        <b style="--w:42%" class="c-gold"></b>
+                        <b style="--w:68%" class="in1 c-bright"></b>
+                        <b style="--w:54%" class="in2 c-cream"></b>
+                        <b style="--w:78%" class="in2 c-muted"></b>
+                        <b style="--w:46%" class="in2 c-gold"></b>
+                        <b style="--w:34%" class="in1 c-muted"></b>
+                        <b style="--w:62%" class="in1 c-cream"></b>
+                        <b style="--w:50%" class="in2 c-gold"></b>
+                        <b style="--w:28%" class="in1 c-muted"></b>
+                        <b style="--w:40%" class="c-dim"></b>
+                      </div>
+                    </div>
+                  </div>
 
-                <!-- Animated Signal Paths: Code -> Interface -->
-                <g class="sculpture-paths" fill="none" stroke="url(#goldLine)" stroke-width="1.75" stroke-linecap="round">
-                  <path class="signal-path path-1" d="M136 74 C 162 74, 162 84, 190 84"/>
-                  <path class="signal-path path-2" d="M136 175 C 164 175, 164 148, 190 148"/>
-                  <path class="signal-path path-3" d="M136 175 C 164 175, 164 188, 190 188"/>
-                </g>
+                  <!-- Intermediate translucent glass depth frame -->
+                  <div class="ws-mod ws-ghost"></div>
 
-                <!-- Connection Nodes -->
-                <g class="sculpture-nodes">
-                  <circle class="node-pulse" cx="136" cy="74" r="4" fill="#dfc89f"/>
-                  <circle class="node-pulse delay-1" cx="136" cy="175" r="4" fill="#8b9e74"/>
-                  <circle class="node-pulse delay-2" cx="190" cy="84" r="4" fill="#dfc89f"/>
-                  <circle class="node-pulse delay-1" cx="190" cy="148" r="4" fill="#dfc89f"/>
-                  <circle class="node-pulse delay-2" cx="190" cy="188" r="4" fill="#8b9e74"/>
-                </g>
+                  <!-- 2. Center: Large Premium Browser Window -->
+                  <div class="ws-mod ws-browser">
+                    <div class="ws-bar">
+                      <span class="ws-dots"><i></i><i></i><i></i></span>
+                      <span class="ws-bar-right"><i></i><i></i></span>
+                    </div>
+                    <div class="ws-browser-view">
+                      <svg class="ws-dune-svg" viewBox="0 0 400 220" preserveAspectRatio="none">
+                        <defs>
+                          <radialGradient id="duneSky" cx="35%" cy="30%" r="75%">
+                            <stop offset="0%" stop-color="#3d3122" stop-opacity="0.55"/>
+                            <stop offset="60%" stop-color="#191714" stop-opacity="0.85"/>
+                            <stop offset="100%" stop-color="#10100e" stop-opacity="0.96"/>
+                          </radialGradient>
+                          <linearGradient id="duneLit" x1="12%" y1="20%" x2="78%" y2="85%">
+                            <stop offset="0%" stop-color="#fae9cd"/>
+                            <stop offset="28%" stop-color="#DFC496"/>
+                            <stop offset="62%" stop-color="#9b7b4e"/>
+                            <stop offset="100%" stop-color="#35291c"/>
+                          </linearGradient>
+                          <linearGradient id="duneShadow" x1="0%" y1="30%" x2="88%" y2="88%">
+                            <stop offset="0%" stop-color="#b89868" stop-opacity="0.92"/>
+                            <stop offset="28%" stop-color="#6b5233" stop-opacity="0.96"/>
+                            <stop offset="68%" stop-color="#2e2316" stop-opacity="0.98"/>
+                            <stop offset="100%" stop-color="#12100d"/>
+                          </linearGradient>
+                          <linearGradient id="duneBack" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ab8c5e" stop-opacity="0.7"/>
+                            <stop offset="50%" stop-color="#56432b" stop-opacity="0.85"/>
+                            <stop offset="100%" stop-color="#181511" stop-opacity="0.95"/>
+                          </linearGradient>
+                          <linearGradient id="crestRim" x1="0%" y1="50%" x2="100%" y2="30%">
+                            <stop offset="0%" stop-color="#fff6e4" stop-opacity="0.9"/>
+                            <stop offset="55%" stop-color="#e8cda0" stop-opacity="0.75"/>
+                            <stop offset="100%" stop-color="#c4a26e" stop-opacity="0"/>
+                          </linearGradient>
+                        </defs>
+                        <rect width="400" height="220" fill="url(#duneSky)"/>
+                        <!-- Distant ridge -->
+                        <path d="M165 128 C215 92, 265 118, 355 72 L400 95 L400 220 L140 220 Z" fill="url(#duneBack)"/>
+                        <!-- Main sunlit left slope -->
+                        <path d="M-10 198 C45 162, 118 96, 176 98 C222 100, 268 122, 355 72 L240 220 L-10 220 Z" fill="url(#duneLit)"/>
+                        <!-- Shaded right leeward face -->
+                        <path d="M176 98 C214 102, 245 132, 355 72 L400 112 L400 220 L108 220 C145 172, 162 122, 176 98 Z" fill="url(#duneShadow)"/>
+                        <!-- Foreground soft trough -->
+                        <path d="M-10 206 C95 168, 195 148, 335 122 L400 140 L400 220 L-10 220 Z" fill="#171410" fill-opacity="0.68"/>
+                        <!-- Luminous S-crest highlight -->
+                        <path d="M4 192 C62 154, 122 96, 176 98 C222 100, 272 118, 355 72" stroke="url(#crestRim)" stroke-width="2.2" fill="none"/>
+                      </svg>
+                    </div>
+                  </div>
 
-                <!-- Right: Assembled Polished Interface Frame -->
-                <g class="sculpture-layer-ui">
-                  <rect x="190" y="30" width="206" height="190" rx="18" fill="url(#surfaceGlow)" stroke="#dfc89f" stroke-opacity="0.38" stroke-width="1.2"/>
-                  <!-- Window top bar -->
-                  <circle cx="208" cy="48" r="3" fill="#dfc89f" fill-opacity="0.65"/>
-                  <circle cx="219" cy="48" r="3" fill="#ffffff" fill-opacity="0.25"/>
-                  <circle cx="230" cy="48" r="3" fill="#ffffff" fill-opacity="0.25"/>
-                  <line x1="190" y1="62" x2="396" y2="62" stroke="#ffffff" stroke-opacity="0.1"/>
-                  <!-- Assembled Hero UI card inside frame -->
-                  <rect class="ui-block-1" x="208" y="74" width="170" height="48" rx="10" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1"/>
-                  <line x1="220" y1="90" x2="296" y2="90" stroke="#f5f5f2" stroke-width="3" stroke-linecap="round"/>
-                  <line x1="220" y1="104" x2="268" y2="104" stroke="#dfc89f" stroke-width="2.5" stroke-linecap="round"/>
-                  <rect x="330" y="88" width="36" height="18" rx="9" fill="#dfc89f" fill-opacity="0.22" stroke="#dfc89f" stroke-opacity="0.6"/>
-                  <!-- Assembled Workflow/Schedule rows -->
-                  <rect class="ui-block-2" x="208" y="132" width="170" height="32" rx="8" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08"/>
-                  <circle cx="222" cy="148" r="4" fill="#8b9e74"/>
-                  <line x1="234" y1="148" x2="312" y2="148" stroke="#f5f5f2" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
-                  <rect x="336" y="141" width="30" height="14" rx="7" fill="#36502b"/>
+                  <!-- 3. Right: Floating Smartphone Interface -->
+                  <div class="ws-mod ws-phone">
+                    <div class="ws-phone-screen">
+                      <div class="ws-phone-top">
+                        <span class="ws-dots"><i></i><i></i></span>
+                        <span class="ws-phone-pill"></span>
+                      </div>
+                      <div class="ws-phone-art">
+                        <svg viewBox="0 0 160 110" preserveAspectRatio="none">
+                          <path d="M0 88 C28 64, 62 36, 94 40 C118 42, 138 52, 160 32 L160 110 L0 110 Z" fill="url(#duneLit)"/>
+                          <path d="M94 40 C112 44, 132 58, 160 32 L160 110 L62 110 C78 82, 86 56, 94 40 Z" fill="url(#duneShadow)"/>
+                          <path d="M2 86 C32 62, 64 36, 94 40 C118 42, 138 50, 160 32" stroke="url(#crestRim)" stroke-width="1.6" fill="none"/>
+                        </svg>
+                        <div class="ws-phone-pager"><i></i><i></i></div>
+                      </div>
+                      <div class="ws-phone-lines">
+                        <b style="--w:64%"></b>
+                        <b style="--w:82%"></b>
+                        <b style="--w:48%" class="muted"></b>
+                      </div>
+                      <div class="ws-phone-foot"></div>
+                    </div>
+                  </div>
 
-                  <rect class="ui-block-3" x="208" y="172" width="170" height="32" rx="8" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.08"/>
-                  <circle cx="222" cy="188" r="4" fill="#dfc89f"/>
-                  <line x1="234" y1="188" x2="298" y2="188" stroke="#f5f5f2" stroke-opacity="0.8" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M347 188L351 192L359 184" stroke="#dfc89f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </g>
-              </svg>
-              <div class="sculpture-caption">
-                <span><span lang="ja">構想・コードから、使いやすい画面へ</span><span lang="en">Turning ideas into engineered interfaces</span></span>
-                <span class="sculpture-coords"><code>&lt;/&gt;</code> → UI</span>
+                  <!-- 4. Bottom: Luminous Modular Geometric Core -->
+                  <div class="ws-core">
+                    <svg class="ws-core-svg" viewBox="0 0 360 210" fill="none">
+                      <defs>
+                        <!-- Pedestal top & side gradients -->
+                        <linearGradient id="pedTop" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#2c261e" stop-opacity="0.88"/>
+                          <stop offset="50%" stop-color="#1d1a16" stop-opacity="0.92"/>
+                          <stop offset="100%" stop-color="#29231b" stop-opacity="0.88"/>
+                        </linearGradient>
+                        <linearGradient id="pedLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#221e18"/>
+                          <stop offset="100%" stop-color="#3d3224"/>
+                        </linearGradient>
+                        <linearGradient id="pedRight" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#382d20"/>
+                          <stop offset="100%" stop-color="#141210"/>
+                        </linearGradient>
+                        <!-- Luminous inner core faces -->
+                        <linearGradient id="coreTop" x1="20%" y1="0%" x2="80%" y2="100%">
+                          <stop offset="0%" stop-color="#7c6545" stop-opacity="0.72"/>
+                          <stop offset="65%" stop-color="#d8b989" stop-opacity="0.88"/>
+                          <stop offset="100%" stop-color="#fff0d1" stop-opacity="0.96"/>
+                        </linearGradient>
+                        <linearGradient id="coreLeft" x1="0%" y1="20%" x2="100%" y2="80%">
+                          <stop offset="0%" stop-color="#6e5739" stop-opacity="0.78"/>
+                          <stop offset="65%" stop-color="#cfa972" stop-opacity="0.92"/>
+                          <stop offset="100%" stop-color="#fff5de" stop-opacity="1"/>
+                        </linearGradient>
+                        <linearGradient id="coreRight" x1="0%" y1="50%" x2="100%" y2="50%">
+                          <stop offset="0%" stop-color="#fff3d6" stop-opacity="0.98"/>
+                          <stop offset="40%" stop-color="#be9963" stop-opacity="0.88"/>
+                          <stop offset="100%" stop-color="#4e3d28" stop-opacity="0.75"/>
+                        </linearGradient>
+                        <!-- Upper floating glass plate -->
+                        <linearGradient id="capGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.06"/>
+                          <stop offset="60%" stop-color="#dfc89f" stop-opacity="0.18"/>
+                          <stop offset="100%" stop-color="#fff0d2" stop-opacity="0.38"/>
+                        </linearGradient>
+                        <!-- Point light flares -->
+                        <radialGradient id="vertexBloom" cx="50%" cy="50%" r="50%">
+                          <stop offset="0%" stop-color="#fffdf7" stop-opacity="1"/>
+                          <stop offset="18%" stop-color="#ffe7be" stop-opacity="0.92"/>
+                          <stop offset="48%" stop-color="#d9b478" stop-opacity="0.42"/>
+                          <stop offset="100%" stop-color="#d9b478" stop-opacity="0"/>
+                        </radialGradient>
+                      </defs>
+
+                      <!-- Ground radar ellipse & crosshairs -->
+                      <ellipse cx="180" cy="148" rx="146" ry="36" stroke="#dfc89f" stroke-opacity="0.24" stroke-width="0.9"/>
+                      <ellipse cx="180" cy="148" rx="108" ry="26" stroke="#dfc89f" stroke-opacity="0.14" stroke-width="0.7" stroke-dasharray="3 5"/>
+                      <line x1="65" y1="126" x2="295" y2="170" stroke="#dfc89f" stroke-opacity="0.15" stroke-width="0.8"/>
+                      <line x1="65" y1="170" x2="295" y2="126" stroke="#dfc89f" stroke-opacity="0.15" stroke-width="0.8"/>
+
+                      <!-- Ambient floor reflection -->
+                      <ellipse cx="180" cy="142" rx="76" ry="24" fill="url(#vertexBloom)" opacity="0.55"/>
+
+                      <!-- Tier 1: Dark Obsidian Base Pedestal -->
+                      <!-- Top face -->
+                      <polygon points="180,82 268,108 180,136 92,108" fill="url(#pedTop)" stroke="#dfc89f" stroke-opacity="0.42" stroke-width="1"/>
+                      <!-- Left front face -->
+                      <polygon points="92,108 180,136 180,164 92,136" fill="url(#pedLeft)" stroke="#dfc89f" stroke-opacity="0.3" stroke-width="0.9"/>
+                      <!-- Right front face -->
+                      <polygon points="180,136 268,108 268,136 180,164" fill="url(#pedRight)" stroke="#dfc89f" stroke-opacity="0.25" stroke-width="0.9"/>
+
+                      <!-- Tier 2: Luminous Inner Core Prism -->
+                      <g class="ws-core-prism">
+                        <!-- Top face -->
+                        <polygon points="180,58 232,74 180,92 128,74" fill="url(#coreTop)" stroke="#fce8c3" stroke-opacity="0.65" stroke-width="1"/>
+                        <!-- Left front face -->
+                        <polygon points="128,74 180,92 180,122 128,104" fill="url(#coreLeft)" stroke="#ffeac7" stroke-opacity="0.6" stroke-width="1"/>
+                        <!-- Right front face -->
+                        <polygon points="180,92 232,74 232,104 180,122" fill="url(#coreRight)" stroke="#ffeac7" stroke-opacity="0.5" stroke-width="1"/>
+                        <!-- Bright vertical front spine -->
+                        <line x1="180" y1="68" x2="180" y2="178" stroke="#fff7e6" stroke-opacity="0.85" stroke-width="1.6"/>
+                      </g>
+
+                      <!-- Tier 3: Floating Translucent Glass Cap Plate -->
+                      <g class="ws-core-cap">
+                        <polygon points="180,38 246,58 180,78 114,58" fill="url(#capGlass)" stroke="#f5dfc0" stroke-opacity="0.62" stroke-width="1.1"/>
+                        <polygon points="114,58 180,78 246,58 246,61 180,81 114,61" fill="#dfc89f" fill-opacity="0.24"/>
+                      </g>
+
+                      <!-- Primary Point-Light Blooms at Core Vertices -->
+                      <circle class="ws-core-flare f1" cx="180" cy="122" r="36" fill="url(#vertexBloom)"/>
+                      <circle class="ws-core-flare f2" cx="180" cy="92" r="28" fill="url(#vertexBloom)"/>
+                      <ellipse cx="180" cy="122" rx="18" ry="3.5" fill="#fffaf0" opacity="0.85"/>
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
+            <p class="obj-caption"><span lang="ja">構想から、使いやすい画面へ。</span><span lang="en">From idea to engineered interface.</span></p>
           </div>
         </div>
 
