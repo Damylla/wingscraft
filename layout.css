@@ -1,0 +1,85 @@
+.nav .logo { -webkit-touch-callout:none; }
+img,svg,picture,.image-link { -webkit-touch-callout:none; -webkit-user-drag:none; user-select:none; }
+.nav .logo img { pointer-events:none; -webkit-user-drag:none; user-select:none; }
+/* Screen composition: retain the desktop cards and illustrations in reading order. */
+@media screen and (max-width:760px) {
+  .page-index .hero-stage-grid,.page-index .hero-deck {grid-template-columns:minmax(0,1fr);gap:28px}
+  .page-index .hero-meta {display:none}
+  .page-index .home-hero {padding-top:40px;padding-bottom:56px}
+  .page-index .home-hero h1,html[lang=ja] .page-index .home-hero h1 {font-size:clamp(30px,8.3vw,54px);line-height:1.22;letter-spacing:-.035em}
+  .hero-craft-sculpture {width:100%;max-width:520px;margin-inline:auto}
+  .sculpture-card {padding:18px;border-radius:24px}
+  .sculpture-header {font-size:9px;letter-spacing:.04em;gap:8px}
+  .sculpture-caption {font-size:10px;gap:8px}
+  .hero-deck {margin-top:28px;padding-top:24px}
+  .page-index .home-hero .lead {padding-left:0;border-left:0;text-wrap:pretty}
+  .home-hero .intro-line {text-wrap:wrap}
+  .page-index .service-showcase {display:flex;flex-direction:column;gap:20px}
+  .page-index .service-preview {display:flex;flex-direction:column;min-height:0}
+  .page-index .preview-copy {padding:26px 24px}
+  .page-index .service-preview>.product-preview {margin:0 18px 18px;min-height:220px;flex:none}
+  .page-index .service-flagship .preview-web-content {grid-template-columns:minmax(0,1fr) auto;padding:20px}
+  .page-index .mini-cup {width:78px;height:78px}
+  .page-index .workflow-stage {width:100%;border-radius:28px;padding-block:48px}
+  .page-index .workflow-stage>.wrap {width:calc(100% - 36px)}
+  .editorial-title,html[lang=ja] .editorial-title,.teaser-header h2,html[lang=ja] .page-index .teaser-header h2 {font-size:clamp(24px,6.5vw,36px);white-space:normal;line-height:1.4}
+  .phrase {white-space:normal}
+  .journey-grid,.live-project-pair,.study-grid {display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+  .journey-step {padding:26px}
+  .live-project-window {margin:18px 18px 0}
+  .live-stat-row,.live-slot-strip {grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .study-card {grid-template-rows:240px auto}
+  .study-copy {padding:26px}
+  .page-index .closing h2,html[lang=ja] .page-index .closing h2 {font-size:clamp(25px,6.8vw,38px);line-height:1.4}
+  .nav {background:#10110ff2;border-bottom:1px solid #ffffff16;padding-top:env(safe-area-inset-top);backdrop-filter:blur(16px)}
+  .bar {width:calc(100% - 32px);min-height:68px;padding:8px 0;border:0;border-radius:0;gap:12px}
+  .bar .logo {margin-right:auto}
+  .bar .logo img {width:136px}
+  .bar .mobile-contact {display:none}
+  .bar .lang,.menu-toggle {width:44px;height:44px;border:1px solid #ffffff25;background:#ffffff05;border-radius:50%}
+  .bar nav {left:-16px;right:-16px;border-radius:0 0 24px 24px;padding:12px 24px 24px;background:#171914}
+  .bar nav a {font-size:16px;min-height:52px;border-bottom:1px solid #ffffff0d}
+  .bar nav a[aria-current=page] {color:var(--gold)}
+  .project-type-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .project-type-card {padding:16px 12px}
+  .pt-title {font-size:14px}
+  .pt-desc {font-size:11px}
+}
+
+/* Print uses the site's native surfaces, without sticky elements or reveal states. */
+@page {size:A4 portrait;margin:12mm}
+@media print {
+  html,body {width:auto!important;max-width:none!important;overflow:visible!important;height:auto!important;font-size:10pt}
+  *,*::before,*::after {-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;animation:none!important;transition:none!important}
+  .page-intro h1,.home-hero h1,html[lang=ja] .page-intro h1,html[lang=ja] .home-hero h1 {font-size:30pt!important;line-height:1.25!important}
+  h2,html[lang=ja] h2 {font-size:22pt!important;line-height:1.3!important}
+  h3 {font-size:15pt!important}
+  h1,h2,h3,.eyebrow {break-after:avoid}
+  p,li {orphans:3;widows:3}
+  .lead {font-size:11pt!important;line-height:1.7!important}
+  .ja-sentence-lines>span,.en-sentence-lines>span,.phrase,.ja-single-line,.ja-demo-heading {white-space:normal!important}
+  .section,.page-intro,.home-hero {padding-block:8mm!important}
+  .service-detail,.scope-grid article {background:transparent!important;color:inherit!important;break-inside:auto!important}
+  .product-preview {background:#f0f0e9!important;color:#343b30!important}
+  form {background:#eeeee8!important;color:#1c1e1a!important;break-inside:auto!important}
+  form label,form p,form h2 {color:#1c1e1a!important}
+  .light .price-card .price-amount,.light .gold {color:#77643e!important}
+  .light .workflow-demo,.light .price-card {--text:#1c1e1a;--muted:#61645b}
+  .hero-stage-grid,.hero-deck,.teaser-header,.booking-study,.profile,.service-showcase,.live-project-pair {display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:7mm!important}
+  .service-preview {grid-column:1/-1!important;min-height:0!important;break-inside:avoid!important}
+  .page-index .service-flagship {grid-template-columns:1fr 1fr!important}
+  .hero-craft-sculpture {max-width:105mm;margin-inline:auto}
+  .hero-meta,.hero-ambient,.palette,.palette-backdrop,.copy-email-btn,.template-btn,.menu-toggle,#back-to-top {display:none!important}
+  .study-card {grid-template-rows:55mm auto!important;height:auto!important}
+  .study-copy h2 {min-height:0!important}
+  .closing {margin-block:8mm!important;padding:8mm!important;break-inside:avoid}
+  .scroll-reveal,.scroll-pending,.motion-item,[data-reveal] {opacity:1!important;visibility:visible!important;transform:none!important;translate:none!important;scale:1!important}
+  .demo-bar,.sample-banner {position:static!important}
+  .demo-shell,.desk,.booking-layout {display:block!important;min-height:0!important}
+  .demo-sidebar,.feedback-bar,dialog,.sample-header nav {display:none!important}
+  .inquiry-list {max-height:none!important;overflow:visible!important}
+  .panel,.appointment,.menu-list article {break-inside:avoid}
+  .demo-shell main {padding:8mm 0!important}
+  .sample-hero,.sample-visit {min-height:0!important;gap:8mm!important;padding-block:8mm!important}
+  .sample-illustration {height:75mm!important}
+}
